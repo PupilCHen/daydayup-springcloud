@@ -1,0 +1,4 @@
+server:
+  port: 3377
+
+# 通过jar包启动参数，确定环境 -Dspring.profiles.active=dev

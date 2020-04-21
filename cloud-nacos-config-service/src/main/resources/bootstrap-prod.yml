@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.53.166:8848
+      config:
+        server-addr: 192.168.53.166:8848
+        file-extension: yaml
+        group: TEST_GROUP
+        namespace: 2762ff1b-25bd-49a0-bedf-7759701bb5c9
+
+# ${prefix}-${spring.profile.active}.${file-extension}
+# nacos-config-client-dev.yaml

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="department" class="com.learn.springcloud.entities.Department">
+        <property name="name" value="财务部门"/>
+        <!--给数组注入值-->
+        <property name="empName">
+            <list>
+                <value>小米</value>
+                <value>小写</value>
+                <value>小陈</value>
+            </list>
+        </property>
+        <property name="empList">
+            <list>
+                <ref bean="emp1"/>
+                <ref bean="emp2"/>
+            </list>
+        </property>
+        <property name="empSets">
+            <list>
+                <ref bean="emp1"/>
+                <ref bean="emp2"/>
+            </list>
+        </property>
+        <property name="empMap">
+            <map>
+                <entry key="1" value-ref="emp1"/>
+                <entry key="2" value-ref="emp2"/>
+            </map>
+        </property>
+        <property name="pp">
+            <props>
+                <prop key="pp1">Hello</prop>
+                <prop key="pp2">World</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="emp1" class="com.learn.springcloud.entities.Employee">
+        <property name="name">
+            <value>北京</value>
+        </property>
+    </bean>
+    <bean id="emp2" class="com.learn.springcloud.entities.Employee">
+        <property name="name">
+            <value>天津</value>
+        </property>
+    </bean>
+
+    <!--<bean id="person" class="com.learn.springcloud.entities.Person" autowire="no">-->
+    <!--    <property name="fr" ref="fr"/>-->
+    <!--</bean>-->
+    <!--<bean id="person" class="com.learn.springcloud.entities.Person" autowire="byName"/>-->
+    <!--<bean id="person" class="com.learn.springcloud.entities.Person" autowire="byType"/>-->
+    <!--<bean id="person" class="com.learn.springcloud.entities.Person" autowire="constructor"/>-->
+
+    <!--default 就是属性注入-->
+    <bean id="person" class="com.learn.springcloud.entities.Person" autowire="default">
+        <property name="fr" ref="fr"/>
+    </bean>
+
+    <bean id="fr" class="com.learn.springcloud.entities.FishingRod"/>
+</beans>

@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: nacos-config-client
+
+# ${prefix}-${spring.profile.active}.${file-extension}
+# nacos-config-client-dev.yaml
+
